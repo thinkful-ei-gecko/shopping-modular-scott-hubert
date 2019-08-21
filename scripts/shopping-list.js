@@ -89,13 +89,13 @@ const shoppingList = (function(){
     });
   }
   
-  function toggleCheckedItemsFilter() {
-    store.hideCheckedItems = !store.hideCheckedItems;
-  }
+  // function toggleCheckedItemsFilter() {
+  //   store.hideCheckedItems = !store.hideCheckedItems;
+  // }
   
-  function setSearchTerm(val) {
-    store.searchTerm = val;
-  }
+  // function setSearchTerm(val) {
+  //   store.searchTerm = val;
+  // }
   
   
   function handleDeleteItemClicked() {
@@ -121,16 +121,16 @@ const shoppingList = (function(){
   }
   
   function handleToggleFilterClick() {
-    $('.js-filter-checked').click(() => {
-      toggleCheckedItemsFilter();
+     $('.js-filter-checked').click(() => {
+      store.toggleCheckedFilter();
       render();
-    });
+     });
   }
   
   function handleShoppingListSearch() {
     $('.js-shopping-list-search-entry').on('keyup', event => {
       const val = $(event.currentTarget).val();
-      setSearchTerm(val);
+      store.setSearchTerm(val);
       render();
     });
   }

@@ -32,6 +32,12 @@ const store = (function () {
         },
         findAndDelete(id) {
             this.items = this.items.filter(item => item.id !== id);
+        },
+        toggleCheckedFilter() {
+            this.hideCheckedItems = !this.hideCheckedItems;
+        },
+        setSearchTerm(word) {
+            this.searchTerm = word;
         }
     };
     return store;
